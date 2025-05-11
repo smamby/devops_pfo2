@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PFO2_DevOps</title>
+</head>
+<body>
+    <h1>Welcome to PFO2_DevOps</h1>
+    <p>This is a simple HTML page for the PFO2_DevOps project.</p>
+    <div class="nav">
+        <form id="cargarReg" class="cargarReg" action="localhost:3001/data" method="POST">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email">
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+    <div class="registro">
+        <ul id="registros-lista">
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const registrosDiv = document.querySelector('.registro');
+            const registrosLista = document.getElementById('registros-lista');
+            const cargarRegForm = document.getElementById('cargarReg');
+            cargarRegForm.addEventListener('submit', function(event) {
+                guardarRegistro();
+            });
+
+            function cargarRegistros() {
+                fetch('http://localhost:3001/data')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (Array.isArray(data)) {
+                            registrosLista.innerHTML = ''; 
+                            data.forEach(registro => {
+                                const listItem = document.createElement('li');
+                                listItem.textContent = `Nombre: ${registro.name}, Email: ${registro.email}, ID: ${registro.id}, Creado: ${registro.created}`;
+                                registrosLista.appendChild(listItem);
+                            });
+                        } else {
+                            registrosLista.textContent = 'No se encontraron registros o el formato de los datos es incorrecto.';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error al obtener los registros:', error);
+                        registrosLista.textContent = 'Error al cargar los registros.';
+                    });
+            }
+            cargarRegistros();
+
+            function guardarRegistro() {
+                event.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+
+                fetch('http://localhost:3001/data', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, email })
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Registro guardado:', data);
+                    cargarRegistros();
+                })
+                .catch(error => {
+                    console.error('Error al guardar el registro:', error);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+body {
+    background-color: salmon;
+}
+.nav {
+    background-color: lightblue;
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+.registro {
+    background-color: aliceblue;
+    width: auto;
+    height: auto;
+}
+input[text] {
+    height: 4rem;
+    width: 40%;
+}
