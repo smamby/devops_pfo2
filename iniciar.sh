@@ -83,4 +83,4 @@ echo "--- Proceso completado ---"
 
 echo pwd
 
-docker exec -i db mysql -u root -p'admin' < ./db_init.sql
+docker exec -i devops_pfo2-db-1 mysql -u root -p'admin' < ./db_init.sql
