@@ -87,3 +87,5 @@ ls -l ./db_init.sql
 sleep 5
 
 docker exec -i devops_pfo2-db-1 mysql -u root -p'admin' < ./db_init.sql
+
+start chrome http://localhost:8080
