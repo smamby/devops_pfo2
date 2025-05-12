@@ -1,7 +1,7 @@
 # PFO2 - DevOps
 
 ## Parte 1
-## contenerizacion de aplicacion
+## Contenerizacion de aplicacion
 
 Construir las imagenes antes, y luego correrlas:  
 docker-compose up -d --build
