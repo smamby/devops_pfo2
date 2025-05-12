@@ -81,6 +81,7 @@ run_docker_compose
 
 echo "--- Proceso completado ---"
 
-echo pwd
+docker ps -a
+echo $pwd
 
 docker exec -i devops_pfo2-db-1 mysql -u root -p'admin' < ./db_init.sql
