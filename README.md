@@ -6,8 +6,7 @@
 Automatizar el clonado del repositorio:  
 descargar iniciar.sh y ejecutar el script  
 #### ./iniciar.sh  
-luego crear la base de datos  
-#### docker exec -i devops_pfo2-db-1 mysql -u root -p'admin' < devops_pfo2/db_init.sql  
+se clona y crear la base de datos    
    
    
    

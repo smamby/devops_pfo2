@@ -88,4 +88,5 @@ sleep 5
 
 docker exec -i devops_pfo2-db-1 mysql -u root -p'admin' < ./db_init.sql
 
+sleep 2
 start chrome http://localhost:8080
