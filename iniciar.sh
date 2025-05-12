@@ -86,4 +86,4 @@ echo pwd
 ls -l ./db_init.sql
 ls -l devops_pfo2/db_init.sql # Si crees que está en el directorio del repo clonado
 
-docker exec -i devops_pfo2-db-1 mysql -u root -p'admin' < devops_pfo2/db_init.sql
+docker exec -i devops_pfo2-db-1 mysql -u root -p'admin' < ./db_init.sql
