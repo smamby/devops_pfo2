@@ -28,7 +28,7 @@ docker stop $imagen
 
 docker rm $imagen
 
-docker build -t $imagen $url
+docker build --no-cache -t $imagen $url
 docker run -d \
   --name $imagen \
   -p $ports \
