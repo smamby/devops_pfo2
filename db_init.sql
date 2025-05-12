@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS db_pfo2;
 
 USE db_pfo2;
 
-CREATE TABLE user (
+CREATE TABLE IF NOT EXISTS user (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50),
     email VARCHAR(25),
@@ -10,6 +10,7 @@ CREATE TABLE user (
 );
 
 SHOW TABLES;
+
 
 INSERT INTO user (name, email) VALUES
 ('maria','maria@email.com'),

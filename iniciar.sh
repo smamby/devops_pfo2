@@ -80,3 +80,5 @@ clone_repo
 run_docker_compose
 
 echo "--- Proceso completado ---"
+
+docker exec -i db mysql -u root -p'admin' < ./init.sql
