@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - nw_pfo2
+    ports:
+      - "3307:3306"
+
+  backend:
+    build: .
+    ports:
+      - "3001:3001"
+    depends_on:
+      - db
+    networks:
+      - nw_pfo2
+
+  static:
+    build: ./public
+    ports:
+      - "8080:80"
+    networks:
+      - nw_pfo2
+
+networks:
+  nw_pfo2:
+    name: nw_pfo2
