@@ -1,12 +1,13 @@
 # PFO2 - DevOps   
    
 ## Parte 1   
-## Contenerizacion de aplicacion   
+## Containerizacion de aplicacion   
    
-Automatizar el clonado del repositorio:  
-descargar iniciar.sh y ejecutar el script  
+Automatiza el clonado del repositorio:  
+descarga iniciar.sh y ejecuta el script  
 #### ./iniciar.sh  
-se clona y crear la base de datos    
+se clona y crear la base de datos.
+ir http://localhost:8080   
    
    
    
