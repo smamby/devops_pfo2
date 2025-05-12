@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
   db:
-    container_name: db
     image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: admin
@@ -14,7 +13,6 @@ services:
       - "3307:3306"
 
   backend:
-    container_name:: backend
     image: sebamamby/backend:latest
     ports:
       - "3001:3001"
@@ -24,7 +22,6 @@ services:
       - nw_pfo2
 
   static:
-    container_name:: static
     image: sebamamby/static:latest
     ports:
       - "8080:80"
