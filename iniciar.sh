@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # --- Configuración ---
-REPO_URL="<URL_de_tu_repositorio_github>"
+REPO_URL="https://github.com/smamby/devops_pfo2.git"
 REPO_DIR_NAME=$(basename "$REPO_URL" .git) # Obtiene el nombre del directorio del repo
 COMPOSE_FILE="docker-compose.yml"
 
