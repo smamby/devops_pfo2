@@ -31,3 +31,6 @@ services:
 networks:
   nw_pfo2:
     name: nw_pfo2
+
+volumes: 
+  mysql_data: 
