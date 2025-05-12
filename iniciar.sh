@@ -82,7 +82,7 @@ run_docker_compose
 echo "--- Proceso completado ---"
 
 docker ps -a
-echo pwd
+echo "$(pwd)"
 ls -l ./db_init.sql
 sleep 5
 
