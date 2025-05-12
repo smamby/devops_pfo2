@@ -82,7 +82,7 @@ run_docker_compose
 echo "--- Proceso completado ---"
 
 docker ps -a
-echo $pwd
+echo pwd
 ls -l ./db_init.sql
 ls -l devops_pfo2/db_init.sql # Si crees que está en el directorio del repo clonado
 
