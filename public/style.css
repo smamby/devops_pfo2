@@ -1,8 +1,10 @@
 body {
     background-color: salmon;
+    font-family: monospace;
 }
 .nav {
-    background-color: lightblue;
+    background-color: aliceblue;
+    /* background-color: lightblue; */
     height: 4rem;
     display: flex;
     justify-content: space-around;
@@ -14,6 +16,7 @@ body {
     background-color: aliceblue;
     width: auto;
     height: auto;
+    padding: 1rem 0;
 }
 input[text] {
     height: 4rem;

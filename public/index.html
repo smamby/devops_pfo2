@@ -45,6 +45,8 @@
                             registrosLista.innerHTML = ''; 
                             data.forEach(registro => {
                                 const listItem = document.createElement('li');
+                                listItem.style.listStyleType = 'none';
+                                listItem.style.margin = '0.5rem 0';
                                 listItem.textContent = `Nombre: ${registro.name}, Email: ${registro.email}, ID: ${registro.id}, Creado: ${registro.created}`;
                                 registrosLista.appendChild(listItem);
                             });
